@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб настільних ігор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #009dff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        .menu-item {
+            margin: 0 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .menu-item a:hover {
+            color: #0056b3; 
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content p {
+            color: blue; 
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #contact-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #009dff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+
+        .modal-content {
+            margin: 15px 0;
+        }
+
+        button {
+            background-color: #009dff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .image-container img {
+            flex: 0 0 calc(25% - 10px);
+            max-width: calc(25% - 10px);
+            margin: 5px;
+            height: auto;
+        }
+
+        .list_style {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Десктопна версія */
+        @media (min-width: 1024px) {
+            nav {
+                justify-content: space-around;
+            }
+
+            .content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Планшетна версія */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                margin: 5px 0;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .image-container img {
+                max-width: calc(25% - 10px);
+                margin: 5px;
+            }
+        }
+
+        /* Мобільна версія */
+        @media (max-width: 767px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                margin: 5px 0;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Клуб настільних ігор</h1>
+    </header>
+
+    <nav>
+        <div class="menu-item"><a href="#">Каталог</a></div>
+        <div class="menu-item"><a href="#">Магазини</a></div>
+        <div class="menu-item"><a href="#">Про нас</a></div>
+        <div class="menu-item"><a href="#">Події</a></div>
+        <div class="menu-item"><a href="#" class="menu-item-underline" onclick="openContactModal()">Контакти</a></div>
+        <div class="menu-item"><a href="#">Кошик</a></div>
+    </nav>
+
+    <div id="contact-modal">
+        <p class="modal-content">Номер телефона: +3801113245</p>
+        <p class="modal-content">Email: boardgames@gmail.com</p>
+        <p class="modal-content">Адрес: Київ, вул. Машинобудівна, 19</p>
+        <button onclick="closeContactModal()">Закрити</button>
+    </div>
+
+    <div class="content">
+        <p style="font-weight: bold; font-size: 3em; margin-bottom: 2px;">Board Games Club</p>
+        <p style="font-size: 1.5em; margin-bottom: 2px;">Настільні ігри на будь-який смак</p>
+        <i style="margin-bottom: 40px;">Запрошуємо вас поринути у світ настільних ігор! У нас ви знайдете гри для всієї родини, друзів та колег. 
+            <br></br> Також у вас є можливість відвідати ігротеки, про поведення яких ми будемо інформувати вас на нашому сайті.</i>
+
+        <p style="font-weight: bold; font-size: 2em; margin-top: 60px;">Популярні ігри</p>
+
+        <div class="image-container">
+            <img src="game1.png" alt="Game 1">
+            <img src="game2.png" alt="Game 2">
+            <img src="game3.png" alt="Game 3">
+            <img src="game4.png" alt="Game 4">
+            <img src="game5.png" alt="Game 5">
+            <img src="game6.png" alt="Game 6">
+            <img src="game7.jpg" alt="Game 7">
+            <img src="game8.jpg" alt="Game 8">
+        </div>
+
+        <p style="font-weight: bold; font-size: 2em; margin-top: 60px;">Наші переваги</p>
+        <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 5px;">Широкий асортимент</p>
+        <p>Ми пропонуємо більше 500 різних настільних ігор на будь-який смак та вік. Від класичних шахів до сучасних стратегій та кооперативних ігор.</p>
+
+        <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 5px;">Гарантія якості</p>
+        <p>Всі наші ігри сертифіковані та відповідають стандартам якості. Ми співпрацюємо тільки з перевіреними виробниками.</p>
+
+        <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 5px;">Швидка доставка</p>
+        <p>Ми здійснюємо доставку по всій Україні в найкоротші терміни. Зробіть замовлення зараз і отримайте свою гру вже завтра!</p>
+
+        <p style="font-weight: bold; font-size: 2em; margin-top: 60px;">Основні послуги</p>
+        <table>
+            <tr>
+                <th>Послуга</th>
+                <th>Опис</th>
+                <th>Ціна</th>
+            </tr>
+            <tr>
+                <td>Продаж настільних ігор</td>
+                <td>Великий вибір настільних ігор для будь-якого віку і смаку</td>
+                <td>від 400 ₴</td>
+            </tr>
+            <tr>
+                <td>Прокат ігор</td>
+                <td>Можливість взяти гру напрокат на декілька днів</td>
+                <td>від 200 ₴/день</td>
+            </tr>
+            <tr>
+                <td>Організація ігрових вечорів</td>
+                <td>Проведення ігрових заходів для компаній та сімей</td>
+                <td>500 ₴ з людини</td>
+            </tr>
+            <tr>
+                <td>Консультація та рекомендації</td>
+                <td>Допомога у виборі гри та консультації з правил</td>
+                <td>безкоштовно</td>
+            </tr>
+        </table>
+
+        <p style="font-weight: bold; font-size: 2em; margin-top: 60px;">Акції дня</p>
+        <img src="discount.png" alt="Discount">
+        <ul style="list-style-type: disc;">
+            <li>Знижка 20% на всі ігри (діє до 30.06.24)</li>
+            <li>Покупка 2 ігор за ціною однієї (з 01.05.24 по 15.06.24)</li>
+            <li>Безкоштовна доставка при замовленні на суму від 1000 ₴</li>
+        </ul>
+    </div>
+
+    <script>
+        function openContactModal() {
+            var modal = document.getElementById("contact-modal");
+            modal.style.display = "block";
+        }
+
+        function closeContactModal() {
+            var modal = document.getElementById("contact-modal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
